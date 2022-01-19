@@ -3,8 +3,10 @@ package com.tst.homeTests
 import com.tst.homeTests.models._
 
 object Problem1 {
+  final val GREEN = "\u001B[32m"
+  final val RESET = "\u001B[0m"
+
   def main(args: Array[String]) : Unit = {
-    println("Running solution for Problem1")
 
     val M1 = "M1"
     val M2 = "M2"
@@ -35,6 +37,8 @@ object Problem1 {
     val bestGroupPrices = getBestGroupPrices(rates, cabinPrices)
       .sortBy(_.price)
       .sortBy(_.cabinCode)
+
+    println(s"${GREEN}Running solution for Problem 1${RESET}")
     for(bestGroupPrice <- bestGroupPrices) {
       println(bestGroupPrice)
     }

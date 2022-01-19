@@ -23,5 +23,10 @@ package object models {
       .map(toPromotionCombo(_))
       .toSeq
   }
+  def combinablePromotions(promotionCode: String, allPromotions: Seq[Promotion]): Seq[PromotionCombo] = {
+    allCombinablePromotions(allPromotions).filter { promotionCombo =>
+      promotionCombo.promotionCodes.contains(promotionCode)
+    }
+  }
 
 }
