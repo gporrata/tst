@@ -1,0 +1,8 @@
+# ignore all hidden files
+.*
+
+# except these
+!.gitignore
+
+# scala specific ignores
+**/target
